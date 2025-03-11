@@ -3,12 +3,21 @@ import java.util.*;
 
 public class articulation{
 
+    public static void isEulerian(List<List<Integer>> adj, boolean[] visited, int start){
+        
+    }
+
     public static void DFS(List<List<Integer>> adj, boolean[] visited, int start){
         //create stack for dfs
         Stack<Integer> stack = new Stack<>();
         stack.push(start);
         while(!stack.isEmpty()){
-            System.out.println("Hello");
+            int s = stack.peek();
+            System.out.println(s);
+            stack.pop();
+            if (!visited[s]){
+                visited[s] = true;
+            }
         }
     }
 
@@ -37,6 +46,8 @@ public class articulation{
                 adj.get(u).add(v);
                 adj.get(v).add(u);
             }
+
+            Helper(adj, start);
 
             sc.close();
         } catch (FileNotFoundException e){
